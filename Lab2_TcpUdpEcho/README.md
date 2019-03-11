@@ -27,6 +27,35 @@
 
 
 
+## 目录结构
+
+```
+Lab2_TcpUdpEcho
+│   README.md
+│
+├───TCP
+│   ├───可执行文件
+│   │       TcpEcho_Client.exe
+│   │       TcpEcho_Server.exe
+│   │       TcpEcho_Server_Enhanced.exe
+│   │
+│   └───源码
+│           TcpEcho_Client.c
+│           TcpEcho_Server.c
+│           TcpEcho_Server_Enhanced.cpp
+│
+└───UDP
+     ├───可执行文件
+     │       UdpEcho_Client.exe
+     │       UdpEcho_Server.exe
+     │
+     └───源码
+             UdpEcho_Client.c
+             UdpEcho_Server.cpp
+```
+
+
+
 ## 实验总结
 
 ### TCP 服务器端编程的步骤
@@ -50,4 +79,5 @@
 
 ## 参考资料
 
-https://www.cnblogs.com/hgwang/p/6074038.html
+[windows socket函数详解](https://www.cnblogs.com/hgwang/p/6074038.html)
+
