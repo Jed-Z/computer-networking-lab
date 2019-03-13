@@ -58,7 +58,10 @@ Lab2_TcpUdpEcho
 
 ## 实验总结
 
-### TCP 服务器端编程的步骤
+### TCP 编程步骤
+
+#### TCP 服务器端编程的步骤
+
 1. 加载套接字库，创建套接字`WSAStartup()`/`socket()`；
 2. 绑定套接字到一个IP地址和一个端口上`bind()`；
 3. 将套接字设置为监听模步等待连接请求`listen()`；
@@ -69,7 +72,8 @@ Lab2_TcpUdpEcho
 
 
 
-### TCP 客户端编程的步骤
+#### TCP 客户端编程的步骤
+
 1. 加载套接字库，创建套接字`WSAStartup()`/`socket()`；
 2. 向服务器发出连接请求`connect()`；
 3. 和服务器端进行通信`send()`/`recv()`；
@@ -77,7 +81,16 @@ Lab2_TcpUdpEcho
 
 
 
+### UDP 编程步骤
+
+* 与 TCP 类似，不过 UDP 不需要建立连接（`accept()`/`connect()`）。
+
+* 发送函数为`sendto()`，接收函数为`recvfrom()`。
+
+
+
 ## 参考资料
 
 [windows socket函数详解](https://www.cnblogs.com/hgwang/p/6074038.html)
 
+[Getting Started with Winsock](https://docs.microsoft.com/en-us/windows/desktop/winsock/getting-started-with-winsock)
