@@ -26,15 +26,10 @@
 
 
 
-## 任务五
-
-运行客户端程序测试与老师的服务器程序的连接（172.18.187.9:50500）
-
-
-
 ## 参考资料
 
 [Getting Started with Winsock](https://docs.microsoft.com/en-us/windows/desktop/winsock/getting-started-with-winsock)
 
 [windows socket函数详解](https://www.cnblogs.com/hgwang/p/6074038.html)
 
+[对于CRITICAL_SECTION用法的介绍和理解](https://blog.csdn.net/shaoyiju/article/details/54882267)
