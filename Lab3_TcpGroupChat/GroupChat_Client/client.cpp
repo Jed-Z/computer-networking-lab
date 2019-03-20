@@ -4,7 +4,7 @@ int main(int argc, char *argv[])
 {
 	printf("[Group Chat Client]\n群聊客户端正在连接服务器...");
 
-	const char *host = "172.18.187.9"; // server IP to connect
+	const char *host = "127.0.0.1"; // server IP to connect
 	u_short port = 50500;			   // server port to connect
 	struct sockaddr_in sin;			   // an Internet endpoint address
 	char buf[BUFLEN + 1];			   // buffer for one line of text
@@ -35,9 +35,13 @@ int main(int argc, char *argv[])
 	{
 		fgets(buf, BUFLEN, stdin);
 		buf[strlen(buf) - 1] = '\0'; // 把换行符替换为空字符
+		if (std::string(buf) == "exit") {// 用户输入了exit，正常退出
+			break;
+		}
 		int sendlen = send(sock, buf, strlen(buf) + 1, 0);
 	}
 
+	CloseHandle(recv_thread);
 	closesocket(sock); // 关闭监听套接字
 	WSACleanup();	  // 卸载winsock library
 
@@ -59,8 +63,9 @@ unsigned __stdcall recvThread(void *p)
 		printf("\r");// 回到行首，覆盖掉之前显示的提示符
 		if (recvlen == SOCKET_ERROR)
 		{
-			printf("[-] Error: %ld.\n", GetLastError());
-			break;
+			printf("[-] Error: %ld. 按任意键关闭客户端。\n", GetLastError());
+			getchar();
+			exit(1);
 		}
 		else if (recvlen == 0)
 		{

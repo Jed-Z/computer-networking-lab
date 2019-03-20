@@ -33,7 +33,9 @@ int main()
 				threadinfo[i].thread_index = i;
 				threadinfo[i].handle = (HANDLE)_beginthreadex(NULL, 0, &serveThread, (void*)&threadinfo[i], 0, NULL);
 				threadinfo[i].ssock = new_ssock;
+				threadinfo[i].fsin = fsin;
 				ssocks_full = 0;// 未达到最大并发数，清除标志位
+				CloseHandle(threadinfo[i].handle); // 关闭线程句柄，但并没有结束线程
 				break;
 			}
 		}
@@ -43,7 +45,7 @@ int main()
 		}
 	}
 	closesocket(msock); // 关闭监听套接字
-	WSACleanup();			  // 卸载winsock library
+	WSACleanup();		// 卸载winsock library
 
 	return 0;
 }
@@ -53,11 +55,26 @@ unsigned __stdcall serveThread(void* p)
 	ThreadInfo mythread = *(ThreadInfo*)p;
 	char buf[BUFLEN + 1];// 线程缓冲区
 
+	printf("发现新客户端加入群聊！\n");
+	strncpy(buf, "Enter!", BUFLEN);
+	makeReplyMsg(buf, mythread.fsin);
+	printf("%s", buf);
+	sendToAll(buf);
+	printf("---------------------------------------\n");
+
 	while (1) {
 		int recvlen = recv(mythread.ssock, buf, BUFLEN, 0); // 接收信息
 		if (recvlen == SOCKET_ERROR)
 		{
-			printf("[-] Error: %ld.\n", GetLastError());
+			if (GetLastError() == 10054) {
+				strncpy(buf, "Leave!", BUFLEN);
+				makeReplyMsg(buf, mythread.fsin);
+				printf("%s", buf);
+				sendToAll(buf);
+			}
+			else{
+				printf("[-] Error: %ld.\n", GetLastError());
+			}
 			printf("---------------------------------------\n");
 			break;
 		}
@@ -69,13 +86,12 @@ unsigned __stdcall serveThread(void* p)
 		}
 		else {
 			buf[recvlen] = '\0';					   // 保证以空字符结尾
-			printf("收到消息：%s\n",buf);
-			printf("---------------------------------------\n");
-
+			makeReplyMsg(buf, mythread.fsin);
+			printf("%s", buf);
 			sendToAll(buf);
+			printf("---------------------------------------\n");
 		}
 	}
-	//Call CloseHandle?
 	threadinfo[mythread.thread_index].handle = NULL;// 从数组中移除该线程
 	closesocket(mythread.ssock);
 	return 0;
@@ -88,4 +104,16 @@ void sendToAll(const char* msg)
 			send(threadinfo[i].ssock, msg, strlen(msg), 0);
 		}
 	}
+}
+
+void makeReplyMsg(char* msg, struct sockaddr_in fsin) {
+	using namespace std;
+	ostringstream os;
+	os << "客户端：" << (int)fsin.sin_addr.S_un.S_un_b.s_b1 << '.' << (int)fsin.sin_addr.S_un.S_un_b.s_b2
+		<< '.' << (int)fsin.sin_addr.S_un.S_un_b.s_b3 << '.' << (int)fsin.sin_addr.S_un.S_un_b.s_b4
+		<< ':' << fsin.sin_port << endl;
+	time_t now = time(NULL);
+	os << "时间：" << ctime(&now) << flush;
+	os << "消息：" << msg << endl;
+	strncpy(msg, os.str().c_str(), BUFLEN);
 }
