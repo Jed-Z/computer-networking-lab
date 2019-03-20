@@ -1,3 +1,9 @@
+/*
+ * @Author: Jed
+ * @Description: TcpEcho_Client.c
+ * @Date: 2019-03-11
+ * @LastEditTime: 2019-03-20
+ */
 #include <stdio.h>
 #include <winsock2.h>
 #define BUFLEN 2000				   // »º³åÇø´óÐ¡
