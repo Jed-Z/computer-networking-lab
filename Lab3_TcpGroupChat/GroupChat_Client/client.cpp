@@ -1,4 +1,10 @@
-﻿#include "client.h"
+/*
+ * @Author: Jed
+ * @Description: client.cpp
+ * @Date: 2019-03-23
+ * @LastEditTime: 2019-03-23
+ */
+#include "client.h"
 
 int main(int argc, char *argv[])
 {

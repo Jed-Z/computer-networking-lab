@@ -1,3 +1,9 @@
+/*
+ * @Author: Jed
+ * @Description: server.h
+ * @Date: 2019-03-23
+ * @LastEditTime: 2019-03-23
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <WinSock2.h>
@@ -6,22 +12,22 @@
 #include <string>
 #include <sstream>
 #include "conio.h"
-#pragma comment(lib, "ws2_32.lib") //Ê¹ÓÃwinsock 2.2 library
+#pragma comment(lib, "ws2_32.lib") //ä½¿ç”¨winsock 2.2 library
 
-const int MAXSOCKS = 5;// ×î´ó²¢·¢Á¬½ÓÊı
-const size_t BUFLEN = 2000;// »º³åÇø´óĞ¡
+const int MAXSOCKS = 5;// æœ€å¤§å¹¶å‘è¿æ¥æ•°
+const size_t BUFLEN = 2000;// ç¼“å†²åŒºå¤§å°
 
 struct ThreadInfo {
-	int thread_index;//Ïß³Ì±»·ÖÅäÖÁµÄÊı×éÏÂ±ê
-	HANDLE handle;// ¾ä±ú£¬NULL´ú±íÉĞÎ´±»·ÖÅä
-	SOCKET ssock;//ºÍ¿Í»§¶ËÁ¬½ÓµÄ´ÓÌ×½Ó×Ö
-	struct sockaddr_in fsin;//¿Í»§¶ËµØÖ·
+	int thread_index;//çº¿ç¨‹è¢«åˆ†é…è‡³çš„æ•°ç»„ä¸‹æ ‡
+	HANDLE handle;// å¥æŸ„ï¼ŒNULLä»£è¡¨å°šæœªè¢«åˆ†é…
+	SOCKET ssock;//å’Œå®¢æˆ·ç«¯è¿æ¥çš„ä»å¥—æ¥å­—
+	struct sockaddr_in fsin;//å®¢æˆ·ç«¯åœ°å€
 
-	ThreadInfo() :handle(NULL) {}// ¹¹Ôìº¯Êı
+	ThreadInfo() :handle(NULL) {}// æ„é€ å‡½æ•°
 };
 ThreadInfo threadinfo[MAXSOCKS];
 
 
-unsigned __stdcall serveThread(void* p);//·şÎñÒ»¸ö¿Í»§¶ËµÄÏß³Ì
-void sendToAll(const char* msg);// ÏòËùÓĞ¿Í»§¶Ë·¢ËÍ×Ö·û´®
-void makeReplyMsg(char* msg, struct sockaddr_in fsin);// ÔÚÏûÏ¢Ç°Ãæ¼ÓÉÏ¸Ã¿Í»§¶ËµÄIPµØÖ·ºÍ¶Ë¿ÚºÅÒÔ¼°·şÎñÆ÷µÄµ±Ç°Ê±¼ä
+unsigned __stdcall serveThread(void* p);//æœåŠ¡ä¸€ä¸ªå®¢æˆ·ç«¯çš„çº¿ç¨‹
+void sendToAll(const char* msg);// å‘æ‰€æœ‰å®¢æˆ·ç«¯å‘é€å­—ç¬¦ä¸²
+void makeReplyMsg(char* msg, struct sockaddr_in fsin);// åœ¨æ¶ˆæ¯å‰é¢åŠ ä¸Šè¯¥å®¢æˆ·ç«¯çš„IPåœ°å€å’Œç«¯å£å·ä»¥åŠæœåŠ¡å™¨çš„å½“å‰æ—¶é—´

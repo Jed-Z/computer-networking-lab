@@ -1,51 +1,57 @@
+/*
+ * @Author: Jed
+ * @Description: server.cpp
+ * @Date: 2019-03-23
+ * @LastEditTime: 2019-03-23
+ */
 #include "server.h"
 
 int main()
 {
-	printf("[Group Chat Server]\nÕıÔÚÆô¶¯ÈºÁÄ·şÎñÆ÷...");
+	printf("[Group Chat Server]\næ­£åœ¨å¯åŠ¨ç¾¤èŠæœåŠ¡å™¨...");
 
 	struct sockaddr_in sin;  // an Internet endpoint address
 	struct sockaddr_in fsin; // the from address of a client
 	u_short port = 50500;
 
 	WSADATA wsadata;
-	WSAStartup(MAKEWORD(2, 0), &wsadata);			   // ¼ÓÔØwinsock library
-	SOCKET msock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP); // ¼àÌıÌ×½Ó×Ö
-	memset(&sin, 0, sizeof(sin));					   // ´Ó&sin¿ªÊ¼µÄ³¤¶ÈÎªsizeof(sin)µÄÄÚ´æÇå0
-	sin.sin_family = AF_INET;						   // ÒòÌØÍøµØÖ·´Ø(INET-Internet)
-	sin.sin_addr.s_addr = INADDR_ANY;				   // ¼àÌıËùÓĞ(½Ó¿ÚµÄ)IPµØÖ·
-	sin.sin_port = htons(port);						   // ¼àÌıµÄ¶Ë¿ÚºÅ
-	bind(msock, (struct sockaddr *)&sin, sizeof(sin)); // °ó¶¨¼àÌıµÄIPµØÖ·ºÍ¶Ë¿ÚºÅ
-	listen(msock, 5); // µÈ´ı½¨Á¢Á¬½ÓµÄ¶ÓÁĞ³¤¶ÈÎª5
+	WSAStartup(MAKEWORD(2, 0), &wsadata);			   // åŠ è½½winsock library
+	SOCKET msock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP); // ç›‘å¬å¥—æ¥å­—
+	memset(&sin, 0, sizeof(sin));					   // ä»&sinå¼€å§‹çš„é•¿åº¦ä¸ºsizeof(sin)çš„å†…å­˜æ¸…0
+	sin.sin_family = AF_INET;						   // å› ç‰¹ç½‘åœ°å€ç°‡(INET-Internet)
+	sin.sin_addr.s_addr = INADDR_ANY;				   // ç›‘å¬æ‰€æœ‰(æ¥å£çš„)IPåœ°å€
+	sin.sin_port = htons(port);						   // ç›‘å¬çš„ç«¯å£å·
+	bind(msock, (struct sockaddr *)&sin, sizeof(sin)); // ç»‘å®šç›‘å¬çš„IPåœ°å€å’Œç«¯å£å·
+	listen(msock, 5); // ç­‰å¾…å»ºç«‹è¿æ¥çš„é˜Ÿåˆ—é•¿åº¦ä¸º5
 
 	time_t now = time(NULL);
-	printf("³É¹¦¡£\nÆô¶¯Ê±¼ä£º%s\n", ctime(&now));
+	printf("æˆåŠŸã€‚\nå¯åŠ¨æ—¶é—´ï¼š%s\n", ctime(&now));
 	printf("=======================================\n");
 
 	while (!_kbhit())
-	{															// ¼ì²âÊÇ·ñÓĞ°´¼ü
-		int alen = sizeof(struct sockaddr);							// È¡µ½µØÖ·½á¹¹µÄ³¤¶È
-		SOCKET new_ssock = accept(msock, (struct sockaddr*)&fsin, &alen); // Èç¹ûÓĞĞÂµÄÁ¬½ÓÇëÇó£¬·µ»ØÁ¬½ÓÌ×½Ó×Ö£¬·ñÔò£¬±»×èÈû¡£fsin°üº¬¿Í»§¶ËIPµØÖ·ºÍ¶Ë¿ÚºÅ
+	{															// æ£€æµ‹æ˜¯å¦æœ‰æŒ‰é”®
+		int alen = sizeof(struct sockaddr);							// å–åˆ°åœ°å€ç»“æ„çš„é•¿åº¦
+		SOCKET new_ssock = accept(msock, (struct sockaddr*)&fsin, &alen); // å¦‚æœæœ‰æ–°çš„è¿æ¥è¯·æ±‚ï¼Œè¿”å›è¿æ¥å¥—æ¥å­—ï¼Œå¦åˆ™ï¼Œè¢«é˜»å¡ã€‚fsinåŒ…å«å®¢æˆ·ç«¯IPåœ°å€å’Œç«¯å£å·
 
-		int ssocks_full = 1;// ÊÇ·ñ´ïµ½×î´ó²¢·¢ÊıµÄ±êÖ¾Î»
+		int ssocks_full = 1;// æ˜¯å¦è¾¾åˆ°æœ€å¤§å¹¶å‘æ•°çš„æ ‡å¿—ä½
 		for (int i = 0; i < MAXSOCKS; i++) {
-			if (threadinfo[i].handle == NULL) {// ÕÒµ½Êı×éÖĞµÄÒ»¸ö¿ÉÓÃÎ»ÖÃ
+			if (threadinfo[i].handle == NULL) {// æ‰¾åˆ°æ•°ç»„ä¸­çš„ä¸€ä¸ªå¯ç”¨ä½ç½®
 				threadinfo[i].thread_index = i;
 				threadinfo[i].handle = (HANDLE)_beginthreadex(NULL, 0, &serveThread, (void*)&threadinfo[i], 0, NULL);
 				threadinfo[i].ssock = new_ssock;
 				threadinfo[i].fsin = fsin;
-				ssocks_full = 0;// Î´´ïµ½×î´ó²¢·¢Êı£¬Çå³ı±êÖ¾Î»
-				CloseHandle(threadinfo[i].handle); // ¹Ø±ÕÏß³Ì¾ä±ú£¬µ«²¢Ã»ÓĞ½áÊøÏß³Ì
+				ssocks_full = 0;// æœªè¾¾åˆ°æœ€å¤§å¹¶å‘æ•°ï¼Œæ¸…é™¤æ ‡å¿—ä½
+				CloseHandle(threadinfo[i].handle); // å…³é—­çº¿ç¨‹å¥æŸ„ï¼Œä½†å¹¶æ²¡æœ‰ç»“æŸçº¿ç¨‹
 				break;
 			}
 		}
-		if (ssocks_full) {// ÒÑ¾­´ïµ½×î´ó²¢·¢Êı£¬ÎŞ·¨½ÓÄÉ¸ü¶àÁ¬½Ó
-			const char* sorry_msg = "¶Ô²»Æğ£¬ÈºÁÄÈËÊıÒÑÂú£¬ÄúÔİÊ±²»ÄÜ¼ÓÈë¡£";
+		if (ssocks_full) {// å·²ç»è¾¾åˆ°æœ€å¤§å¹¶å‘æ•°ï¼Œæ— æ³•æ¥çº³æ›´å¤šè¿æ¥
+			const char* sorry_msg = "å¯¹ä¸èµ·ï¼Œç¾¤èŠäººæ•°å·²æ»¡ï¼Œæ‚¨æš‚æ—¶ä¸èƒ½åŠ å…¥ã€‚";
 			send(new_ssock, sorry_msg, strlen(sorry_msg), 0);
 		}
 	}
-	closesocket(msock); // ¹Ø±Õ¼àÌıÌ×½Ó×Ö
-	WSACleanup();		// Ğ¶ÔØwinsock library
+	closesocket(msock); // å…³é—­ç›‘å¬å¥—æ¥å­—
+	WSACleanup();		// å¸è½½winsock library
 
 	return 0;
 }
@@ -53,9 +59,9 @@ int main()
 unsigned __stdcall serveThread(void* p)
 {
 	ThreadInfo mythread = *(ThreadInfo*)p;
-	char buf[BUFLEN + 1];// Ïß³Ì»º³åÇø
+	char buf[BUFLEN + 1];// çº¿ç¨‹ç¼“å†²åŒº
 
-	printf("·¢ÏÖĞÂ¿Í»§¶Ë¼ÓÈëÈºÁÄ£¡\n");
+	printf("å‘ç°æ–°å®¢æˆ·ç«¯åŠ å…¥ç¾¤èŠï¼\n");
 	strncpy(buf, "Enter!", BUFLEN);
 	makeReplyMsg(buf, mythread.fsin);
 	printf("%s", buf);
@@ -63,7 +69,7 @@ unsigned __stdcall serveThread(void* p)
 	printf("---------------------------------------\n");
 
 	while (1) {
-		int recvlen = recv(mythread.ssock, buf, BUFLEN, 0); // ½ÓÊÕĞÅÏ¢
+		int recvlen = recv(mythread.ssock, buf, BUFLEN, 0); // æ¥æ”¶ä¿¡æ¯
 		if (recvlen == SOCKET_ERROR)
 		{
 			if (GetLastError() == 10054) {
@@ -80,19 +86,19 @@ unsigned __stdcall serveThread(void* p)
 		}
 		else if (recvlen == 0)
 		{
-			printf("[-] ¿Í»§¶ËÕı³£ÍË³ö¡£\n");
+			printf("[-] å®¢æˆ·ç«¯æ­£å¸¸é€€å‡ºã€‚\n");
 			printf("---------------------------------------\n");
 			break;
 		}
 		else {
-			buf[recvlen] = '\0';					   // ±£Ö¤ÒÔ¿Õ×Ö·û½áÎ²
+			buf[recvlen] = '\0';					   // ä¿è¯ä»¥ç©ºå­—ç¬¦ç»“å°¾
 			makeReplyMsg(buf, mythread.fsin);
 			printf("%s", buf);
 			sendToAll(buf);
 			printf("---------------------------------------\n");
 		}
 	}
-	threadinfo[mythread.thread_index].handle = NULL;// ´ÓÊı×éÖĞÒÆ³ı¸ÃÏß³Ì
+	threadinfo[mythread.thread_index].handle = NULL;// ä»æ•°ç»„ä¸­ç§»é™¤è¯¥çº¿ç¨‹
 	closesocket(mythread.ssock);
 	return 0;
 }
@@ -109,11 +115,11 @@ void sendToAll(const char* msg)
 void makeReplyMsg(char* msg, struct sockaddr_in fsin) {
 	using namespace std;
 	ostringstream os;
-	os << "¿Í»§¶Ë£º" << (int)fsin.sin_addr.S_un.S_un_b.s_b1 << '.' << (int)fsin.sin_addr.S_un.S_un_b.s_b2
+	os << "å®¢æˆ·ç«¯ï¼š" << (int)fsin.sin_addr.S_un.S_un_b.s_b1 << '.' << (int)fsin.sin_addr.S_un.S_un_b.s_b2
 		<< '.' << (int)fsin.sin_addr.S_un.S_un_b.s_b3 << '.' << (int)fsin.sin_addr.S_un.S_un_b.s_b4
 		<< ':' << fsin.sin_port << endl;
 	time_t now = time(NULL);
-	os << "Ê±¼ä£º" << ctime(&now) << flush;
-	os << "ÏûÏ¢£º" << msg << endl;
+	os << "æ—¶é—´ï¼š" << ctime(&now) << flush;
+	os << "æ¶ˆæ¯ï¼š" << msg << endl;
 	strncpy(msg, os.str().c_str(), BUFLEN);
 }
