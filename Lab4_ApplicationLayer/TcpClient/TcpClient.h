@@ -6,6 +6,7 @@
 #include <string>
 #pragma comment(lib, "ws2_32.lib") // 使用winsock 2.0 Llibrary
 
-const int BUFLEN = 10; // 缓冲区大小
+const int BUFLEN = 1000; // 发送缓冲区大小
+const int RBUFLEN = 10; // 接收缓冲区大小
 
 unsigned __stdcall recvThread(void *p);

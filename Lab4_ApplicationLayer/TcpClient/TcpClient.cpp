@@ -47,30 +47,29 @@ int main(int argc, char *argv[])
 
 unsigned __stdcall recvThread(void *p)
 {
-	char buf[BUFLEN + 1]; // 接收缓冲区
+	char rbuf[RBUFLEN + 1]; // 接收缓冲区
 
 	SOCKET sock = *(SOCKET *)p;
 	while (1)
 	{
-		int recvlen = recv(sock, buf, BUFLEN, 0);
-		printf("\r");// 回到行首，覆盖掉之前显示的提示符
+		int recvlen;
+		while ((recvlen = recv(sock, rbuf, RBUFLEN, 0)) > 0) {
+			rbuf[recvlen] = '\0';
+			printf("%s", rbuf);
+		}
+
 		if (recvlen == SOCKET_ERROR)
 		{
 			printf("[-] Error: %ld.\n", GetLastError());
-			exit(1);
+			exit(-1);
 		}
 		else if (recvlen == 0)
 		{
 			printf("[-] Connection closed!\n");
 			closesocket(sock); // 关闭监听套接字
 			WSACleanup();	  // 卸载winsock library
-			exit(-1);
+			exit(-1);  //退出程序
 			break;
-		}
-		else if (recvlen > 0)
-		{
-			buf[recvlen] = '\0';
-			printf("%s", buf);
 		}
 	}
 
