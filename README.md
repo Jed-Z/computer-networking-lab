@@ -2,7 +2,7 @@
 
 ## 仓库简介
 
-本仓库的内容是计网课的配套实验，作者为 [Jed](https://www.jeddd.com)。课程信息如下：
+本仓库的主要内容是计算机网络课的配套实验，作者为 [Jed](https://www.jeddd.com)。课程信息：
 
 > 学校：中山大学（SYSU）
 >
@@ -33,5 +33,5 @@
 | ---------------- | ------------------------------ | ---- |
 | [作业 1](Theoretical_Exercises/ex1.md) | 计网基本概念、时延、物理层     | 49   |
 | [作业 2](Theoretical_Exercises/ex2.md) | 数据链路层                     | 24   |
-| 作业 3           | 以太网、透明网桥、生成树、VLAN | 26   |
+| [作业 3](Theoretical_Exercises/ex3.md) | 以太网、透明网桥、生成树、VLAN | 26   |
 
