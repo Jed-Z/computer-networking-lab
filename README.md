@@ -2,15 +2,15 @@
 
 ## 仓库简介
 
-本仓库的主要内容是计算机网络课的配套实验，作者为 [Jed](https://www.jeddd.com)。课程信息：
+本仓库的主要内容是计算机网络实验，作者为 [Jed](https://www.jeddd.com)。课程信息：
 
 > 学校：中山大学（SYSU）
 >
 > 学院：数据科学与计算机学院（SDCS）
 >
-> 课程：计算机网络实验（Computer Networking Lab）
+> 课程：计算机网络实验（Computer Networking Lab）；教师：张永民
 >
-> 时间：2019年春季（Spring Semester 2019）
+> 时间：2019年春季（Spring 2019）
 
 
 
@@ -22,12 +22,15 @@
 | 2    | [Echo 实验](Lab2_TcpUdpEcho)                       | 套接字（Socket）的基本使用方法     |
 | 3    | [多人聊天编程实验](Lab3_TcpGroupChat)（Chat 实验） | 套接字（Socket）的多线程编程方法   |
 | 4    | [应用层实验](Lab4_ApplicationLayer)                | HTTP、FTP、SMTP、POP3 等协议的使用 |
+| 5    | [二层交换机实验](Lab5_二层交换机实验)              | 掌握二层交换机的基本配置和使用方法 |
+
+其中 1~4 为编程实验，5 为配置实验。
 
 
 
 ## 理论练习题
 
-另附计算机网络[理论练习题及其参考答案](Theoretical_Exercises)。目录：
+另附计算机网络[理论练习题及其参考答案](Theoretical_Exercises)（小溪网）。快速导航：
 
 | 序号             | 内容描述                       | 题量 |
 | ---------------- | ------------------------------ | ---- |
