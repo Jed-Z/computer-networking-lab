@@ -1,0 +1,195 @@
+[A]
+20-S5750-1(config-if-GigabitEthernet 0/24)#show vlan               
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+   1 VLAN0001                         STATIC    Gi0/1, Gi0/2, Gi0/3, Gi0/4            
+                                                Gi0/5, Gi0/6, Gi0/7, Gi0/8            
+                                                Gi0/9, Gi0/11, Gi0/12, Gi0/13         
+                                                Gi0/14, Gi0/15, Gi0/16, Gi0/17        
+                                                Gi0/18, Gi0/19, Gi0/21, Gi0/22        
+                                                Gi0/23, Gi0/24, Gi0/25, Gi0/26        
+                                                Gi0/27, Gi0/28                        
+  10 VLAN0010                         STATIC    Gi0/6, Gi0/10, Gi0/24                 
+  20 VLAN0020                         STATIC    Gi0/6, Gi0/20, Gi0/24                 
+20-S5750-1(config-if-GigabitEthernet 0/24)#switchport mode access  
+20-S5750-1(config-if-GigabitEthernet 0/24)#show vlan             
+VLAN Name                             Status    Ports     
+---- -------------------------------- --------- -----------------------------------
+   1 VLAN0001                         STATIC    Gi0/1, Gi0/2, Gi0/3, Gi0/4            
+                                                Gi0/5, Gi0/6, Gi0/7, Gi0/8            
+                                                Gi0/9, Gi0/11, Gi0/12, Gi0/13         
+                                                Gi0/14, Gi0/15, Gi0/16, Gi0/17        
+                                                Gi0/18, Gi0/19, Gi0/21, Gi0/22        
+                                                Gi0/23, Gi0/24, Gi0/25, Gi0/26        
+                                                Gi0/27, Gi0/28                        
+  10 VLAN0010                         STATIC    Gi0/6, Gi0/10                         
+  20 VLAN0020                         STATIC    Gi0/6, Gi0/20 
+
+
+
+
+
+
+
+[B]
+20-S5750-1(config-if-GigabitEthernet 0/24)#show running-config 
+
+Building configuration...
+Current configuration : 1538 bytes
+
+!
+version RGOS 10.4(2b12)p2 Release(180357)(Mon Dec  1 17:42:40 CST 2014 -ngcf64)
+hostname 20-S5750-1
+!
+!
+!
+!
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+vlan 10
+!
+vlan 20
+!
+!
+no service password-encryption
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+interface GigabitEthernet 0/1
+!         
+interface GigabitEthernet 0/2
+!         
+interface GigabitEthernet 0/3
+!         
+interface GigabitEthernet 0/4
+!         
+interface GigabitEthernet 0/5
+!         
+interface GigabitEthernet 0/6
+ switchport mode trunk
+!         
+interface GigabitEthernet 0/7
+!         
+interface GigabitEthernet 0/8
+!         
+interface GigabitEthernet 0/9
+!         
+interface GigabitEthernet 0/10
+ switchport access vlan 10
+!         
+interface GigabitEthernet 0/11
+!         
+interface GigabitEthernet 0/12
+!         
+interface GigabitEthernet 0/13
+!         
+interface GigabitEthernet 0/14
+!         
+interface GigabitEthernet 0/15
+!         
+interface GigabitEthernet 0/16
+!         
+interface GigabitEthernet 0/17
+!         
+interface GigabitEthernet 0/18
+!         
+interface GigabitEthernet 0/19
+!         
+interface GigabitEthernet 0/20
+ switchport access vlan 20
+!         
+interface GigabitEthernet 0/21
+!         
+interface GigabitEthernet 0/22
+!         
+interface GigabitEthernet 0/23
+!         
+interface GigabitEthernet 0/24
+!         
+interface GigabitEthernet 0/25
+!         
+interface GigabitEthernet 0/26
+!         
+interface GigabitEthernet 0/27
+!         
+interface GigabitEthernet 0/28
+!         
+interface VLAN 10
+ no ip proxy-arp
+ ip address 192.168.10.254 255.255.255.0
+!         
+interface VLAN 20
+ no ip proxy-arp
+ ip address 192.168.20.254 255.255.255.0
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+line con 0
+line vty 0 4
+ login    
+ password b402
+!         
+!         
+end      \
+
+
+
+
+
+
+
+
+[C]
+20-S5750-1(config-if-GigabitEthernet 0/24)#show i route
+                                                   ^
+% Invalid input detected at '^' marker.
+
+20-S5750-1(config-if-GigabitEthernet 0/24)#show ip route
+
+Codes:  C - connected, S - static, R - RIP, B - BGP
+        O - OSPF, IA - OSPF inter area
+        N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+        E1 - OSPF external type 1, E2 - OSPF external type 2
+        i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+        ia - IS-IS inter area, * - candidate default
+
+Gateway of last resort is no set
+C    192.168.10.0/24 is directly connected, VLAN 10
+C    192.168.10.254/32 is local host. 
+C    192.168.20.0/24 is directly connected, VLAN 20
+C    192.168.20.254/32 is local host. 
+
+
+
+
+
+
+
+
+
+
+
+[D]
+20-S5750-1(config-if-GigabitEthernet 0/24)#show ip interface brief 
+Interface                        IP-Address(Pri)      OK?       Status   
+VLAN 10                          192.168.10.254/24    YES       UP       
+VLAN 20                          192.168.20.254/24    YES       UP 
