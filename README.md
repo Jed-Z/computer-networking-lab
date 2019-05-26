@@ -1,8 +1,8 @@
 # 计算机网络实验
 
-## 仓库简介
+## 简介
 
-本仓库的主要内容是计算机网络实验，作者为 [Jed](https://www.jeddd.com)。课程信息：
+本仓库的主要内容是计算机网络实验和小溪网上的理论练习题，作者为 [Jed](https://www.jeddd.com)。课程信息：
 
 > 学校：中山大学（SYSU）
 >
@@ -18,10 +18,10 @@
 
 | 序号 | 名称                                                         | 简介                               |
 | ---- | ------------------------------------------------------------ | ---------------------------------- |
-| 1    | [数据表示实验](Programming_编程实验/Prog1_DataExpressing)    | 结构数据的保存和读取的方法         |
-| 2    | [Echo 实验](Programming_编程实验/Prog2_TcpUdpEcho)           | 套接字（Socket）的基本使用方法     |
-| 3    | [多人聊天编程实验](Programming_编程实验/Prog3_TcpGroupChat)（Chat 实验） | 套接字（Socket）的多线程编程方法   |
-| 4    | [应用层实验](Programming_编程实验/Prog4_ApplicationLayer)    | HTTP、FTP、SMTP、POP3 等协议的使用 |
+| 1    | [数据表示实验](Programming_编程实验/Prog1_数据表示实验)      | 结构数据的保存和读取的方法         |
+| 2    | [Echo 实验](Programming_编程实验/Prog2_Echo实验)             | 套接字（Socket）的基本使用方法     |
+| 3    | [多人聊天编程实验](Programming_编程实验/Prog3_Chat实验)（Chat 实验） | 套接字（Socket）的多线程编程方法   |
+| 4    | [应用层实验](Programming_编程实验/Prog3_Chat实验)            | HTTP、FTP、SMTP、POP3 等协议的使用 |
 
 
 
