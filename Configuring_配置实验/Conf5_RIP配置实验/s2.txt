@@ -1,0 +1,442 @@
+【router 1】
+
+19-RSR20-1(config-router)#show running-config 
+
+Building configuration...
+Current configuration : 907 bytes
+
+!
+version RGOS 10.3(5b6), Release(132193)(Thu Mar 22 18:30:26 CST 2012 -ngcf67)
+hostname 19-RSR20-1
+!
+!
+!
+!
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!         
+!         
+!         
+!         
+!         
+!         
+control-plane
+!         
+control-plane protocol
+ no acpp  
+!         
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp  
+!         
+control-plane data
+ no glean-car
+ no acpp  
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+interface Serial 2/0
+ encapsulation HDLC
+!         
+interface Serial 4/0
+ encapsulation HDLC
+ clock rate 64000
+!         
+interface FastEthernet 0/0
+ ip address 192.168.1.129 255.255.255.192
+ duplex auto
+ speed auto
+!         
+interface FastEthernet 0/1
+ ip address 192.168.2.1 255.255.255.0
+ duplex auto
+ speed auto
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+router rip
+ version 2
+ network 192.168.1.0
+ network 192.168.2.0
+!         
+!         
+!         
+!         
+!         
+ref parameter 50 400
+line con 0
+line aux 0
+line vty 0 4
+ login    
+ password b402
+!         
+!         
+end   
+
+
+***************************************************************************
+【router 2】
+
+19-RSR20-2(config)#show running-config 
+
+Building configuration...
+Current configuration : 986 bytes
+
+!
+version RGOS 10.3(5b6), Release(132193)(Thu Mar 22 18:30:26 CST 2012 -ngcf67)
+hostname 19-RSR20-2
+!
+!
+!
+!
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!         
+!         
+!         
+!         
+!         
+!         
+control-plane
+!         
+control-plane protocol
+ no acpp  
+!         
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp  
+!         
+control-plane data
+ no glean-car
+ no acpp  
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+interface Serial 2/0
+ encapsulation HDLC
+ clock rate 64000
+!         
+interface Serial 4/0
+ encapsulation HDLC
+ clock rate 64000
+!         
+interface FastEthernet 0/0
+ ip address 192.168.3.2 255.255.255.0
+ duplex auto
+ speed auto
+!         
+interface FastEthernet 0/1
+ ip address 192.168.2.2 255.255.255.0
+ duplex auto
+ speed auto
+!         
+interface Loopback 0
+ ip address 192.168.4.2 255.255.255.0
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+router rip
+ version 2
+ network 192.168.2.0
+ network 192.168.3.0
+!         
+!         
+!         
+!         
+!         
+ref parameter 50 400
+line con 0
+line aux 0
+line vty 0 4
+ login    
+ password b402
+!         
+!         
+end   
+
+
+***************************************************************************
+【switch 1】
+
+19-S5750-1#show running-config 
+
+Building configuration...
+Current configuration : 1554 bytes
+
+!
+version RGOS 10.4(2b11)p1 Release(134566)(Wed Apr 25 21:05:17 CST 2012 -ngcf67)
+hostname 19-S5750-1
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+ip http authentication local
+!
+!
+!
+!
+enable service web-server
+!
+!         
+!         
+!         
+interface GigabitEthernet 0/1
+!         
+interface GigabitEthernet 0/2
+!         
+interface GigabitEthernet 0/3
+!         
+interface GigabitEthernet 0/4
+!         
+interface GigabitEthernet 0/5
+!         
+interface GigabitEthernet 0/6
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.1 255.255.255.192
+!         
+interface GigabitEthernet 0/7
+!         
+interface GigabitEthernet 0/8
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.65 255.255.255.192
+!         
+interface GigabitEthernet 0/9
+!         
+interface GigabitEthernet 0/10
+!         
+interface GigabitEthernet 0/11
+!         
+interface GigabitEthernet 0/12
+!         
+interface GigabitEthernet 0/13
+!         
+interface GigabitEthernet 0/14
+!         
+interface GigabitEthernet 0/15
+!         
+interface GigabitEthernet 0/16
+!         
+interface GigabitEthernet 0/17
+!         
+interface GigabitEthernet 0/18
+!         
+interface GigabitEthernet 0/19
+!         
+interface GigabitEthernet 0/20
+!         
+interface GigabitEthernet 0/21
+!         
+interface GigabitEthernet 0/22
+!         
+interface GigabitEthernet 0/23
+!         
+interface GigabitEthernet 0/24
+!         
+interface GigabitEthernet 0/25
+!         
+interface GigabitEthernet 0/26
+!         
+interface GigabitEthernet 0/27
+!         
+interface GigabitEthernet 0/28
+!         
+interface VLAN 1
+ no ip proxy-arp
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+router rip
+ version 2
+ network 192.168.1.0
+!         
+!         
+!         
+line con 0
+line vty 0 4
+ login    
+ password b402
+!         
+!         
+end   
+
+
+***************************************************************************
+【switch 2】
+
+19-S5750-2(config-router)#show running-config 
+
+Building configuration...
+Current configuration : 1537 bytes
+
+!
+version RGOS 10.4(2b11)p1 Release(134566)(Wed Apr 25 21:05:17 CST 2012 -ngcf67)
+hostname 19-S5750-2
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!         
+interface GigabitEthernet 0/1
+!         
+interface GigabitEthernet 0/2
+!         
+interface GigabitEthernet 0/3
+!         
+interface GigabitEthernet 0/4
+!         
+interface GigabitEthernet 0/5
+!         
+interface GigabitEthernet 0/6
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.194 255.255.255.192
+!         
+interface GigabitEthernet 0/7
+!         
+interface GigabitEthernet 0/8
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.66 255.255.255.192
+!         
+interface GigabitEthernet 0/9
+!         
+interface GigabitEthernet 0/10
+!         
+interface GigabitEthernet 0/11
+!         
+interface GigabitEthernet 0/12
+!         
+interface GigabitEthernet 0/13
+!         
+interface GigabitEthernet 0/14
+ no switchport
+ no ip proxy-arp
+ ip address 192.168.1.130 255.255.255.192
+!         
+interface GigabitEthernet 0/15
+!         
+interface GigabitEthernet 0/16
+!         
+interface GigabitEthernet 0/17
+!         
+interface GigabitEthernet 0/18
+!         
+interface GigabitEthernet 0/19
+!         
+interface GigabitEthernet 0/20
+!         
+interface GigabitEthernet 0/21
+!         
+interface GigabitEthernet 0/22
+!         
+interface GigabitEthernet 0/23
+!         
+interface GigabitEthernet 0/24
+!         
+interface GigabitEthernet 0/25
+!         
+interface GigabitEthernet 0/26
+!         
+interface GigabitEthernet 0/27
+!         
+interface GigabitEthernet 0/28
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+router rip
+ version 2
+ network 192.168.1.0
+!         
+!         
+!         
+line con 0
+line vty 0 4
+ login    
+ password b402
+!         
+!         
+end       
+     

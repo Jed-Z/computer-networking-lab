@@ -1,0 +1,209 @@
+【router 1】
+
+
+19-RSR20-1(config-router)#show running-config 
+
+Building configuration...
+Current configuration : 903 bytes
+
+!
+version RGOS 10.3(5b6), Release(132193)(Thu Mar 22 18:30:26 CST 2012 -ngcf67)
+hostname 19-RSR20-1
+!
+!
+!
+!
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!         
+!         
+!         
+!         
+!         
+!         
+control-plane
+!         
+control-plane protocol
+ no acpp  
+!         
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp  
+!         
+control-plane data
+ no glean-car
+ no acpp  
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+interface Serial 2/0
+ encapsulation HDLC
+!         
+interface Serial 4/0
+ encapsulation HDLC
+ clock rate 64000
+!         
+interface FastEthernet 0/0
+ ip address 192.168.1.1 255.255.255.0
+ duplex auto
+ speed auto
+!         
+interface FastEthernet 0/1
+ ip address 192.168.2.1 255.255.255.0
+ duplex auto
+ speed auto
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+router rip
+ version 2
+ network 192.168.1.0
+ network 192.168.2.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+***************************************************************************
+【router 2】
+
+
+19-RSR20-2(config-router)#show running-config 
+
+Building configuration...
+Current configuration : 922 bytes
+
+!
+version RGOS 10.3(5b6), Release(132193)(Thu Mar 22 18:30:26 CST 2012 -ngcf67)
+hostname 19-RSR20-2
+!
+!
+!
+!
+!
+!
+no service password-encryption
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!         
+!         
+!         
+!         
+!         
+!         
+control-plane
+!         
+control-plane protocol
+ no acpp  
+!         
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp  
+!         
+control-plane data
+ no glean-car
+ no acpp  
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+interface Serial 2/0
+ encapsulation HDLC
+ clock rate 64000
+!         
+interface Serial 4/0
+ encapsulation HDLC
+ clock rate 64000
+!         
+interface FastEthernet 0/0
+ ip address 192.168.3.2 255.255.255.0
+ duplex auto
+ speed auto
+!         
+interface FastEthernet 0/1
+ ip address 192.168.2.2 255.255.255.0
+ duplex auto
+ speed auto
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+router rip
+ version 2
+ network 192.168.2.0
+ network 192.168.3.0
+!         
+!         
+!         
+!         
+!         
+ref parameter 50 400
+line con 0
+line aux 0
+line vty 0 4
+ login    
+ password b402
+!         
+!         
+end 
