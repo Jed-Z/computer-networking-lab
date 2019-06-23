@@ -33,7 +33,8 @@
 | 2    | [VLAN 实验](Configuring_配置实验/Conf2_VLAN实验)             | 掌握交换机的 VLAN 配置方法                                   |
 | 3    | [静态路由实验](Configuring_配置实验/Conf3_静态路由实验)      | 掌握静态路由的配置和使用方法                                 |
 | 4    | [VLAN 间路由实验](Configuring_配置实验/Conf4_VLAN间路由实验) | 掌握 VLAN 间静态路由的配置和使用方法，熟悉三层交换机的配置方法 |
-| 5    | [RIP 配置实验](Configuring_配置实验\Conf5_RIP配置实验)       | 学习 RIPv2 的配置方法                                        |
+| 5    | [RIP 配置实验](Configuring_配置实验/Conf5_RIP配置实验)       | 学习 RIPv2 的配置方法                                        |
+| 6    | [OSPF 配置实验](Configuring_配置实验/Conf6_OSPF配置实验)     | 掌握OSPF协议单区域配置方法                                   |
 
 
 
