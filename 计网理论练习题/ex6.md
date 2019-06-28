@@ -150,20 +150,19 @@
 
 
 11.  TCP协议的数据传送服务采用哪种工作方式?
-     
-     A.simplex
-     
 
-B.half duplex
-     
+     A.simplex
+
+     B.half duplex
+
      C.full duplex
 
-<details><summary>Answer</summary>
+     <details><summary>Answer</summary>
          C
-</details>
+     </details>
 
-​     
-​     
+     
+
 12.  建立TCP连接的三次握手使用的标志分别是什么? 
 
      <details><summary>Answer</summary>
@@ -242,13 +241,21 @@ B.half duplex
 
      <details><summary>Answer</summary>
          (a)9000，700
+
          (b)9700，300
+         
          (c)9700，300
+         
          (d)10000，0
+         
          (e)10000，1000
+         
          (f)10000，700
+         
          (g)10700，300
+         
          (h)10700，300
+         
          (i)11000，0
      </details>
 
