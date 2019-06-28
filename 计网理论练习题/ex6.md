@@ -240,17 +240,17 @@
      ![img](assets/fig7-4.jpg)
 
      <details><summary>Answer</summary>
-         <pre>
-         (a)9000，700
-         (b)9700，300
-         (c)9700，300
-         (d)10000，0
-         (e)10000，1000
-         (f)10000，700
-         (g)10700，300
-         (h)10700，300
-         (i)11000，0
-         </pre>
+     <pre>
+     (a)9000，700
+     (b)9700，300
+     (c)9700，300
+     (d)10000，0
+     (e)10000，1000
+     (f)10000，700
+     (g)10700，300
+     (h)10700，300
+     (i)11000，0
+     </pre>
      </details>
 
      
@@ -279,10 +279,12 @@
 
      
 
-21.  一个TCP连接的接收缓冲区大小为2000, 接收方提出的MSS为500。如果使用了Clark算法，在发送了AdvWin=0的确认之后，接收方空闲块的大小为多少字节时才发送下一个确认? 
+21.  一个TCP连接的接收缓冲区大小为2000, 接收方提出的MSS为500。如果使用了Clark算法，在发送了AdvWin=0的确认之后，接收方空闲块的大小为多少字节时才发送下一个确认?  ※
 
      <details><summary>Answer</summary>
-         123
+         至少为500<br />
+         Explanation:
+         空闲块的大小到达接收缓冲区的一半或MSS
      </details>
 
      
@@ -290,25 +292,41 @@
 22.  对于快速重传(fast retransmission), 收到多少个对某个数据段序号的确认(表示期待接收该数据段)将触发数据的重传? 
 
      <details><summary>Answer</summary>
-         123
+         4<br />
+         Explanation:
+         重复收到3个，总共收到4个
      </details>
 
      
 
 23.  只要发送或存在未确认的数据帧，就要启动超时定时器，true or false?
-     A.A.true
-     B.B.false
+     
+     A.true
 
+     B.false
+     
      <details><summary>Answer</summary>
-         123
+    A
      </details>
 
      
-
-24.  如果只有最后三个连续发送的数据段被丢失，其它数据段全部收到且RTT一直保持20ms, 从这三个数据段的第一个数据段发送开始计时，还需要多少时间(ms)才可以全部收到这三个数据段的确认? 
+    
+24.  如果只有最后三个连续发送的数据段被丢失，其它数据段全部收到且RTT一直保持20ms, 从这三个数据段的第一个数据段发送开始计时，还需要多少时间(ms)才可以全部收到这三个数据段的确认?  ※
 
      <details><summary>Answer</summary>
-         123
+     <pre>
+     Answer:
+     200
+     &nbsp;
+     Explanation:
+     20+20 + 40+20 + 80+20 
+     = 40+60+100
+     = 200
+     &nbsp;
+     一个TCP连接的发送方只有一个超时定时器，只针对未收到确认的第一个数据段启动。
+     &nbsp;
+     karn算法：每次超时重传，timeoutInterval加倍；后续发送的数据段都采用当前的timeoutInterval，重传的数据段的ACK不用来计算timeoutInterval。
+     </pre>
      </details>
 
      
@@ -316,7 +334,23 @@
 25.  采用Jacobson算法计算TCP会话的超时时间,如果EstimatedRTT=10ms, DevRTT=1ms, SampledRTT=20ms, 问：新的DevRTT、EstimatedRTT和TimeoutInteval分别为多少毫秒? 
 
      <details><summary>Answer</summary>
-         123
+     <pre>
+     Answer:
+     3.25 11.25 24.25
+     &nbsp;
+     Explanation:
+     EstimatedRTT(new) = EstimatedRTT + a ×(SampleRTT- EstimatedRTT)  a=1/8
+     &nbsp;
+     DevRTT(new) =(1-b)*DevRTT+ b*|SampleRTT- EstimatedRTT|             (typically, b=1/4)
+     &nbsp;
+     TimeoutInterval = EstimatedRTT(new) + 4*DevRTT(new)
+     ===================================================
+     SampleRTT- EstimatedRTT = 10ms
+     EstimatedRTT(new) = 10ms + 1/8 * 10ms = 11.25ms
+     DevRTTRTT(new) = 3/4*1ms + 1/4 * 10ms = 3.25ms
+     &nbsp;
+     TimeoutInterval = EstimatedRTT + 4*DevRTT = 11.25+4*3.25=24.25ms
+     </pre>
      </details>
 
      
@@ -324,7 +358,7 @@
 26.  如果一个TCP数据段的传送在超时时间(30ms)内未收到确认, 重传数据段的超时时间应该设为多少毫秒? 
 
      <details><summary>Answer</summary>
-         123
+         60
      </details>
 
      
@@ -332,31 +366,42 @@
 27.  如果window scale = 4 并且 advertisedWindow = 65534, SWS(Send Window Size)=? *不考虑CongWin.
 
      <details><summary>Answer</summary>
-         123
+         1048544<br />
+         Explanation:
+         AdvWin =65534*2^4  SWS=min{AdvWin,CongWin}=AdvWin<br />
+         这里不考虑CongWin
      </details>
 
      
 
-28.  TCP长肥管道中的同序号数据段应该采用什么选项区分它们? 
-     A.A.WinScale
-     B.B.Selective Acknowledgement
-     C.C.MSS
-     D.D.timestamp
-
-     <details><summary>Answer</summary>
-         123
-     </details>
-
+28.  TCP长肥管道中的同序号数据段应该采用什么选项区分它们？
      
+     A.WinScale
+     
+     B.Selective Acknowledgement
 
-29.  下面哪些陈述是正确的?
-     A.A.Flow control prevents too many data from being sent into network.
-     B.B.Congestion control prevents too many data from being sent into network.
-     C.C.Flow control prevents too many data from being sent to receiver.
-     D.D.Congestion control prevents too many data from being sent to receiver.
+     C.MSS
+     
+     D.timestamp
 
      <details><summary>Answer</summary>
-         123
+    D
+     </details>
+     
+     
+     
+29.  下面哪些陈述是正确的？
+
+     A.Flow control prevents too many data from being sent into network.
+
+     B.Congestion control prevents too many data from being sent into network.
+
+     C.Flow control prevents too many data from being sent to receiver.
+
+     D.Congestion control prevents too many data from being sent to receiver.
+
+     <details><summary>Answer</summary>
+         BC
      </details>
 
      
@@ -364,16 +409,15 @@
 30.  如果AdvWin等于20000，CongWin等于1000, SWS(Sending Window Size)等于多少?
 
      <details><summary>Answer</summary>
-         123
+         1000
      </details>
 
      
 
-31.  如果AIMD(Additive Increase Multiplicative Decrease)用于TCP连接的拥塞控制, 当发生拥塞时, CongWin=10MSS, 它的新的CongWin是多少?
-     在4个RTT之后, 它的CongWin又是多少? 
+31.  如果AIMD(Additive Increase Multiplicative Decrease)用于TCP连接的拥塞控制, 当发生拥塞时, CongWin=10MSS, 它的新的CongWin是多少？在4个RTT之后, 它的CongWin又是多少？
 
      <details><summary>Answer</summary>
-         123
+         5MSS  9MSS
      </details>
 
      
@@ -381,7 +425,9 @@
 32.  假设Tahoe算法被用于TCP连接的拥塞控制, 当超时发生时, CongWin等于16MSS, 如果期间没有发生超时，在5个RTT之后CongWin是多少?
 
      <details><summary>Answer</summary>
-         123
+         10MSS<br />
+         Explanation:
+         2mss，4Mss，8mss，9mss，10Mss
      </details>
 
      
@@ -389,7 +435,9 @@
 33.  假设Reno算法(快速恢复算法)被用于TCP连接的拥塞控制, 当收到三个重复的ACK时, CongWin等于16MSS, 如果期间没有发生超时，在5个RTT之后CongWin是多少? 
 
      <details><summary>Answer</summary>
-         123
+         13MSS<br />
+         Explanation:
+         9MSS,10MSS,11MSS,12MSS,13MSS
      </details>
 
      
@@ -399,7 +447,7 @@
      B.false
 
      <details><summary>Answer</summary>
-         123
+         A
      </details>
 
      
@@ -407,7 +455,7 @@
 35.  请说明使用一次握手建立TCP连接会出现什么问题.
 
      <details><summary>Answer</summary>
-         123
+         只有一次握手的话，也就是说客户端只要发送了连接请求就认为TCP连接，也许服务器根本就不存在或者没打开。如果继续发送数据的话，浪费带宽。再说客户端也需要服务器传来的初始序号和很多选项，这个都做不到。
      </details>
 
      
@@ -415,7 +463,7 @@
 36.  请说明使用二次握手建立TCP连接会出现什么问题.(考虑恶意攻击的情况)
 
      <details><summary>Answer</summary>
-         123
+         只有两次握手的话，服务器可能会因为遭遇恶意攻击而瘫痪：客户端可以发送大量伪造源地址的连接请求，服务器确认后以为连接已经建立，最后会耗尽资源。（DoS攻击）
      </details>
 
      
@@ -423,7 +471,7 @@
 37.  请说明使用三次握手建立TCP连接不能避免恶意攻击的情况.
 
      <details><summary>Answer</summary>
-         123
+         即使用三次握手，服务器也可能会因为遭遇恶意攻击而瘫痪，不过难度增加了很多。（DDoS攻击）
      </details>
 
      
@@ -445,13 +493,19 @@
      (6)查询路由表
      (7)PPP协议
      (8)从收到的帧中取出IP分组
-     (9)从上层收到IP分组
+     (9)网络层从上层收到数据并封装为IP分组
      H1 ping H3：
      H1 ping H4：
      H1 ping H5：
 
      <details><summary>Answer</summary>
-         123
+     <pre>
+     Answer:
+     H1 ping H3 => H1:9653  S1:123   S2:13  H3:8
+     H1 ping H4 => H1:9643  S1:123   S2:8653 H4:8
+     H1 ping H5 => H1:9643  S1:3123   S2:3286423 S1:3213 R1:867 R2:8653 H5:8
+     </pre>
+     Explanation:最后一问把接收方的以太网、802.1Q也加入了。  
      </details>
 
      
@@ -462,7 +516,16 @@
      H1 ping 外网地址：
 
      <details><summary>Answer</summary>
-         123
+     <pre>
+     H1:9643
+     S1:3123
+     S2:3286A423
+     S1:3213
+     R1:86AB43
+     R10:386A...
+     </pre>
+     Explanation:
+     10-A  11-B
      </details>
 
 
