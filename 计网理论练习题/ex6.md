@@ -143,7 +143,7 @@
      E.一个TCP连接提供无比特错的数据传送
 
      <details><summary>Answer</summary>
-         BE
+         BE<br />
      	Explanation:
      	C.TCP连接只能在两个进程之间建立  A.D. 经过因特网可能会丢失和错序
      </details>
@@ -166,7 +166,7 @@
 12.  建立TCP连接的三次握手使用的标志分别是什么? 
 
      <details><summary>Answer</summary>
-         SYN,SYN+ACK,ACK
+         SYN,SYN+ACK,ACK<br />
      	Explanation:
      	SYN+ACK：SYN=1（同步标志）和ACK=1（表示确认号有效）
      </details>
@@ -240,7 +240,7 @@
      ![img](assets/fig7-4.jpg)
 
      <details><summary>Answer</summary>
-         ```
+         <pre>
          (a)9000，700
          (b)9700，300
          (c)9700，300
@@ -250,7 +250,7 @@
          (g)10700，300
          (h)10700，300
          (i)11000，0
-         ```
+         </pre>
      </details>
 
      
