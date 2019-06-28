@@ -49,5 +49,5 @@
 | [作业 3](计网理论练习题/ex3.md) | 以太网、透明网桥、生成树、VLAN | 26   |
 | 作业 4 | IP协议和IP地址 | 40 |
 | 作业 5 | Routing Protocols: RIP,OSPF | 19 |
-| 作业 6 | Transport Layer | 39 |
+| [作业 6](计网理论练习题/ex6.md) | Transport Layer | 39 |
 

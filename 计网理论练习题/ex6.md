@@ -306,7 +306,7 @@
      B.false
      
      <details><summary>Answer</summary>
-    A
+         A
      </details>
 
      
@@ -331,7 +331,7 @@
 
      
 
-25.  采用Jacobson算法计算TCP会话的超时时间,如果EstimatedRTT=10ms, DevRTT=1ms, SampledRTT=20ms, 问：新的DevRTT、EstimatedRTT和TimeoutInteval分别为多少毫秒? 
+25.  采用Jacobson算法计算TCP会话的超时时间,如果EstimatedRTT=10ms, DevRTT=1ms, SampledRTT=20ms, 问：新的DevRTT、EstimatedRTT和TimeoutInteval分别为多少毫秒？ ※
 
      <details><summary>Answer</summary>
      <pre>
@@ -385,7 +385,7 @@
      D.timestamp
 
      <details><summary>Answer</summary>
-    D
+         D
      </details>
      
      
@@ -476,33 +476,45 @@
 
      
 
-38.  在下图中，R1和R2为路由器，S1为二层交换机，S2为三层交换机并配置了VLAN10和VLAN20的虚接口。R1到R2为一个配置了IP地址并使用PPP协议的点到点网络，其它四个(VLAN10，VLAN20，R1~R10，R2~H5)子网都是以太网。如果所有主机、三层交换机和路由器都正确配置了接口的IP地址，三层交换机和路由器都启动了OSPF协议，R1的默认路由指向R10并被发布到OSPF协议，问：H1 ping H3、H1 ping H4、H1 ping H5时依次经过了哪些设备（主机和路由器）以及它们分别使用了以下哪种协议？
-     *只用写单程，只考虑把IP分组从源主机传送至目的主机。
-     *只写数字，中间不要加逗号或空格，例如：H1:9653 S1:132 S2:13 H3:8。（只是答案的格式例子，不针对任何问题）
-     *ARP协议包含了获得MAC地址的整个过程，即不用写它使用的以太网协议和透明网桥算法。 
-     *对于传送数据帧的双方，只需要在发送方写(2)和(3)。
+38.  在下图中，R1和R2为路由器，S1为二层交换机，S2为三层交换机并配置了VLAN10和VLAN20的虚接口。R1到R2为一个配置了IP地址并使用PPP协议的点到点网络，其它四个(VLAN10，VLAN20，R1\~R10，R2\~H5)子网都是以太网。如果所有主机、三层交换机和路由器都正确配置了接口的IP地址，三层交换机和路由器都启动了OSPF协议，R1的默认路由指向R10并被发布到OSPF协议，问：H1 ping H3、H1 ping H4、H1 ping H5时依次经过了哪些设备（主机和路由器）以及它们分别使用了以下哪种协议？
+
+     *   只用写单程，只考虑把IP分组从源主机传送至目的主机。
+     *   只写数字，中间不要加逗号或空格，例如：“H1:9653 S1:132 S2:13 H3:8”。（只是答案的格式例子，不针对任何问题）
+     *   ARP协议包含了获得MAC地址的整个过程，即不用写它使用的以太网协议和透明网桥算法。 
+     *   对于传送数据帧的双方，只需要在发送方写(2)和(3)。
 
      ![img](assets/fig7-8.jpg)
 
      可选项：
+
      (1)透明网桥算法（带VLAN）
+
      (2)802.1Q协议（trunk）
+
      (3)以太网协议
+
      (4)ARP协议（IP地址为下一跳）
+
      (5)ARP协议（IP地址为IP分组的目的地址）
+
      (6)查询路由表
+
      (7)PPP协议
+
      (8)从收到的帧中取出IP分组
+
      (9)网络层从上层收到数据并封装为IP分组
-     H1 ping H3：
-     H1 ping H4：
-     H1 ping H5：
+
+     H1 ping H3：（    ）
+
+     H1 ping H4：（    ）
+
+     H1 ping H5：（    ）
 
      <details><summary>Answer</summary>
      <pre>
-     Answer:
-     H1 ping H3 => H1:9653  S1:123   S2:13  H3:8
-     H1 ping H4 => H1:9643  S1:123   S2:8653 H4:8
+     H1 ping H3 => H1:9653  S1:123    S2:13  H3:8
+     H1 ping H4 => H1:9643  S1:123    S2:8653 H4:8
      H1 ping H5 => H1:9643  S1:3123   S2:3286423 S1:3213 R1:867 R2:8653 H5:8
      </pre>
      Explanation:最后一问把接收方的以太网、802.1Q也加入了。  
@@ -511,18 +523,16 @@
      
 
 39.  接上题，增加两个可选项，H1 ping 外网IP地址时依次使用了以下哪种协议？（只用写单程，只用考虑到R10转发出去，不必考虑后续转发步骤）
+
      (10)匹配了默认路由
+
      (11)NAT
-     H1 ping 外网地址：
+
+     H1 ping 外网地址：（    ）
 
      <details><summary>Answer</summary>
      <pre>
-     H1:9643
-     S1:3123
-     S2:3286A423
-     S1:3213
-     R1:86AB43
-     R10:386A...
+     H1:9643  S1:3123   S2:3286A423 S1:3213 R1:86AB43 R10:386A...
      </pre>
      Explanation:
      10-A  11-B
