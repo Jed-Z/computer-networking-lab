@@ -1,0 +1,199 @@
+5-RSR20-1(config-if-GigabitEthernet 0/1)#show running-config 
+
+Building configuration...
+Current configuration : 2298 bytes
+
+!
+version RGOS 10.4(3b23) Release(176514)(Mon Jul 28 18:19:31 CST 2014 -ngcf62)
+hostname 5-RSR20-1
+webmaster level 0 username admin password 7 154b092c1b25
+!
+!
+!
+!
+!
+!
+diffserv domain default
+!
+!
+!
+!
+cwmp
+!
+!
+!
+!
+!         
+!         
+vlan 1    
+!         
+!         
+no service password-encryption
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+ip access-list standard 1
+ 10 permit 192.168.1.0 0.0.0.255 
+!         
+!         
+!         
+!         
+!         
+control-plane
+!         
+control-plane protocol
+ no acpp  
+!         
+control-plane manage
+ no port-filter
+ no arp-car
+ no acpp  
+!         
+control-plane data
+ no glean-car
+ no acpp  
+!         
+!         
+!         
+!         
+enable service web-server http
+enable service web-server https
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+interface Serial 2/0
+ encapsulation HDLC
+ ip nat inside
+ ip address 192.168.1.129 255.255.255.192
+!         
+interface FastEthernet 1/0
+!         
+interface FastEthernet 1/1
+!         
+interface FastEthernet 1/2
+!         
+interface FastEthernet 1/3
+!         
+interface FastEthernet 1/4
+!         
+interface FastEthernet 1/5
+!         
+interface FastEthernet 1/6
+!         
+interface FastEthernet 1/7
+!         
+interface FastEthernet 1/8
+!         
+interface FastEthernet 1/9
+!         
+interface FastEthernet 1/10
+!         
+interface FastEthernet 1/11
+!         
+interface FastEthernet 1/12
+!         
+interface FastEthernet 1/13
+!         
+interface FastEthernet 1/14
+!         
+interface FastEthernet 1/15
+!         
+interface FastEthernet 1/16
+!         
+interface FastEthernet 1/17
+!         
+interface FastEthernet 1/18
+!         
+interface FastEthernet 1/19
+!         
+interface FastEthernet 1/20
+!         
+interface FastEthernet 1/21
+!         
+interface FastEthernet 1/22
+!         
+interface FastEthernet 1/23
+!         
+interface GigabitEthernet 0/0
+ ip nat inside
+ ip address 192.168.1.65 255.255.255.192
+ duplex auto
+ speed auto
+!         
+interface GigabitEthernet 0/1
+ ip nat outside
+ ip address 172.16.5.17 255.255.0.0
+ duplex auto
+ speed auto
+!         
+interface VLAN 1
+!         
+ip nat pool g5 172.16.5.1 172.16.5.1 netmask 255.255.0.0
+ip nat inside source list 1 pool g5 overload
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+router ospf 1
+ router-id 6.6.6.6
+ network 192.168.1.64 0.0.0.63 area 0
+ network 192.168.1.128 0.0.0.63 area 0
+ default-information originate
+!         
+!         
+!         
+!         
+!         
+ip route 0.0.0.0 0.0.0.0 172.16.0.1
+!         
+!         
+!         
+!         
+!         
+ref parameter 75 140
+line con 0
+line aux 0
+line tty 1
+ modem InOut
+line vty 0 4
+ login    
+ password b402
+!         
+!         
+end  

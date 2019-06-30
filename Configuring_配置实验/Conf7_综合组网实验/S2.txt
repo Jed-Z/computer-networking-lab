@@ -1,0 +1,158 @@
+5-S5750-2(config)#show ip route
+
+Codes:  C - connected, S - static, R - RIP, B - BGP
+        O - OSPF, IA - OSPF inter area
+        N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+        E1 - OSPF external type 1, E2 - OSPF external type 2
+        i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+        ia - IS-IS inter area, * - candidate default
+
+Gateway of last resort is 192.168.1.65 to network 0.0.0.0
+O*E2 0.0.0.0/0 [110/1] via 192.168.1.65, 00:11:25, VLAN 20
+C    192.168.1.0/26 is directly connected, VLAN 10
+C    192.168.1.62/32 is local host. 
+C    192.168.1.64/26 is directly connected, VLAN 20
+C    192.168.1.126/32 is local host. 
+O    192.168.1.128/26 [110/51] via 192.168.1.65, 00:41:18, VLAN 20
+O    192.168.1.192/26 [110/52] via 192.168.1.65, 00:41:18, VLAN 20
+5-S5750-2(config)#show ip ro
+5-S5750-2(config)#show ip route 
+
+Codes:  C - connected, S - static, R - RIP, B - BGP
+        O - OSPF, IA - OSPF inter area
+        N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+        E1 - OSPF external type 1, E2 - OSPF external type 2
+        i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+        ia - IS-IS inter area, * - candidate default
+
+Gateway of last resort is 192.168.1.65 to network 0.0.0.0
+O*E2 0.0.0.0/0 [110/1] via 192.168.1.65, 00:16:10, VLAN 20
+C    192.168.1.0/26 is directly connected, VLAN 10
+C    192.168.1.62/32 is local host. 
+C    192.168.1.64/26 is directly connected, VLAN 20
+C    192.168.1.126/32 is local host. 
+O    192.168.1.128/26 [110/51] via 192.168.1.65, 00:46:02, VLAN 20
+O    192.168.1.192/26 [110/52] via 192.168.1.65, 00:46:02, VLAN 20
+5-S5750-2(config)#show run
+5-S5750-2(config)#show running-config 
+
+Building configuration...
+Current configuration : 1625 bytes
+
+!
+version RGOS 10.4(2b12)p2 Release(180357)(Mon Dec  1 17:42:40 CST 2014 -ngcf64)
+hostname 5-S5750-2
+!
+!
+!
+!
+!
+!
+!
+nfpp
+!
+!
+vlan 1
+!
+vlan 10
+!
+vlan 20
+!
+!
+no service password-encryption
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+interface GigabitEthernet 0/1
+!         
+interface GigabitEthernet 0/2
+!         
+interface GigabitEthernet 0/3
+!         
+interface GigabitEthernet 0/4
+!         
+interface GigabitEthernet 0/5
+!         
+interface GigabitEthernet 0/6
+ switchport mode trunk
+!         
+interface GigabitEthernet 0/7
+!         
+interface GigabitEthernet 0/8
+!         
+interface GigabitEthernet 0/9
+!         
+interface GigabitEthernet 0/10
+ switchport access vlan 10
+!         
+interface GigabitEthernet 0/11
+!         
+interface GigabitEthernet 0/12
+!         
+interface GigabitEthernet 0/13
+!         
+interface GigabitEthernet 0/14
+!         
+interface GigabitEthernet 0/15
+!         
+interface GigabitEthernet 0/16
+!         
+interface GigabitEthernet 0/17
+!         
+interface GigabitEthernet 0/18
+!         
+interface GigabitEthernet 0/19
+!         
+interface GigabitEthernet 0/20
+!         
+interface GigabitEthernet 0/21
+!         
+interface GigabitEthernet 0/22
+!         
+interface GigabitEthernet 0/23
+!         
+interface GigabitEthernet 0/24
+!         
+interface GigabitEthernet 0/25
+!         
+interface GigabitEthernet 0/26
+!         
+interface GigabitEthernet 0/27
+!         
+interface GigabitEthernet 0/28
+!         
+interface VLAN 10
+ no ip proxy-arp
+ ip address 192.168.1.62 255.255.255.192
+!         
+interface VLAN 20
+ no ip proxy-arp
+ ip address 192.168.1.126 255.255.255.192
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+!         
+router ospf 1
+ router-id 6.6.6.8
+ network 192.168.1.0 0.0.0.63 area 0
+ network 192.168.1.64 0.0.0.63 area 0
+!         
+!         
+!         
+!         
+line con 0
+line vty 0 4
+ login    
+ password b402
+!         
+!         
+end  
