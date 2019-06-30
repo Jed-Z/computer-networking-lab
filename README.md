@@ -35,6 +35,7 @@
 | 4    | [VLAN 间路由实验](Configuring_配置实验/Conf4_VLAN间路由实验) | 掌握 VLAN 间静态路由的配置和使用方法，熟悉三层交换机的配置方法 |
 | 5    | [RIP 配置实验](Configuring_配置实验/Conf5_RIP配置实验)       | 学习 RIPv2 的配置方法                                        |
 | 6    | [OSPF 配置实验](Configuring_配置实验/Conf6_OSPF配置实验)     | 掌握OSPF协议单区域配置方法                                   |
+| 7    | [综合组网实验](Configuring_配置实验/Conf7_综合组网实验)      | 学习通过三层交换技术和OSPF协议把实验网连入校园网             |
 
 
 
@@ -48,6 +49,6 @@
 | [作业 2](计网理论练习题/ex2.md) | 数据链路层                     | 24   |
 | [作业 3](计网理论练习题/ex3.md) | 以太网、透明网桥、生成树、VLAN | 26   |
 | 作业 4 | IP协议和IP地址 | 40 |
-| 作业 5 | Routing Protocols: RIP,OSPF | 19 |
-| [作业 6](计网理论练习题/ex6.md) | Transport Layer | 39 |
+| 作业 5 | 路由协议：RIP、OSPF | 19 |
+| [作业 6](计网理论练习题/ex6.md) | 传输层 | 39 |
 
