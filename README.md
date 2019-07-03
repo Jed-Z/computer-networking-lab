@@ -21,7 +21,7 @@
 | 1    | [数据表示实验](Programming_编程实验/Prog1_数据表示实验)      | 结构数据的保存和读取的方法         |
 | 2    | [Echo 实验](Programming_编程实验/Prog2_Echo实验)             | 套接字（Socket）的基本使用方法     |
 | 3    | [多人聊天编程实验](Programming_编程实验/Prog3_Chat实验)（Chat 实验） | 套接字（Socket）的多线程编程方法   |
-| 4    | [应用层实验](Programming_编程实验/Prog4_Chat实验)            | HTTP、FTP、SMTP、POP3 等协议的使用 |
+| 4    | [应用层实验](Programming_编程实验/Prog4_应用层实验)          | HTTP、FTP、SMTP、POP3 等协议的使用 |
 | 5    | [文件传输实验](Programming_编程实验/Prog5_文件传输实验)      | 学习利用套接字传送文件             |
 
 
