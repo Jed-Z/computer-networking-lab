@@ -188,7 +188,7 @@
     <details><summary>Answer</summary>
     <pre>
     10034 0   1
-10034 97  1
+    10034 97  1
     10034 194 1
     10034 291 0
     </pre>
@@ -202,7 +202,7 @@
     <details><summary>Answer</summary>
     <pre>
     10034  97  1
-10034  132 1
+    10034  132 1
     10034  167 1
     </pre>
     </details>
@@ -212,7 +212,7 @@
     <details><summary>Answer</summary>
         3
         <br />
-    Explanation:
+        Explanation:
     	指针为4时0个，为8时1个,为12时2个,为16时3个
     </details>
     
@@ -265,7 +265,7 @@
     <details><summary>Answer</summary>
         A. 01-00-5E-00-01-05<br />
         B. 对远程子网的广播<br />
-    C. 环回地址<br />
+        C. 环回地址<br />
         D. 0x0800<br />
         E. 191.168  1.2<br />
         F. 254
@@ -276,7 +276,7 @@
     <details><summary>Answer</summary>
     <pre>
         192.1.2.0  255.255.255.252
-    192.1.2.4  255.255.255.252
+        192.1.2.4  255.255.255.252
         192.1.2.8  255.255.255.252
         192.1.2.12 255.255.255.252
         192.1.2.64 255.255.255.192
@@ -489,7 +489,7 @@
     <details><summary>Answer</summary>
     <pre>
     R12
-R34
+    R34
     -
     R5
     </pre>
@@ -585,7 +585,7 @@ R34
     <details><summary>Answer</summary>
     	用ARP协议去查询该IP地址(发送ARP请求)，没有响应该IP表示没有被用
     	<br />
-    Explanation:
+        Explanation:
         ping可能被防火墙过滤掉，而ARP不会
     </details>
     
