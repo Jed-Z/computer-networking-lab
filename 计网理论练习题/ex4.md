@@ -22,6 +22,12 @@
 
     D.未指定位速率
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
+
 2.  以下哪种交换技术采用包交换技术且在传送数据之前需要建立连接？
 
     A.电路交换
@@ -31,6 +37,10 @@
     C.永久虚电路
 
     D.交换式虚电路
+
+    <details><summary>Answer</summary>
+        ans
+    </details>
 
 3.  下图存在3条虚电路（red,green,blue） ，它们都是从A或者B出发的虚电路，请填写它们的虚电路表(虚电路填写次序: red,green,blue)。
 
@@ -52,6 +62,10 @@
 
     输入接口                      输入VCI                   输出接口                      输出VCI  
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
 4.  IP协议可以提供哪种服务?
 
     A.constant bit rate service
@@ -63,6 +77,10 @@
     D.guaranteed rate service
 
     E.best effort service
+
+    <details><summary>Answer</summary>
+        ans
+    </details>
 
 5.  下面哪些关于IP协议的说法是正确的？
 
@@ -78,7 +96,15 @@
 
     F.IP协议具有拥塞控制机制.
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
 6.  现在使用IP数据报的服务类型字段提供不同的服务被重新定义为（    ）。
+
+    <details><summary>Answer</summary>
+        ans
+    </details>
 
 7.  下面哪些关于IP数据报的TTL字段的说法是正确的？
 
@@ -94,8 +120,18 @@
 
     F.TTL防止数据报长时间滞留在因特网上.
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 8.  IP数据报头部选项最长可以是多少字节？
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 9.  如果一个IP数据报的协议字段的值为17, 目的主机应该把该数据报交给哪个上层协议?
 
     A.TCP
@@ -106,6 +142,11 @@
 
     D.IGMP
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 10.  如果不带选项的IP数据报被分段, 这些片段头部的哪些字段可能与原数据报头部字段的内容不一样?
 
      A.header checksum
@@ -124,19 +165,39 @@
 
      H.protocol
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 11.  一个没有选项的IP数据报的总长度为3000字节，标识(iden)是10034，DF=0，OFFSET=0，要转发到MTU为800的一个物理网络上。如果前面的片段尽量大，如何划分片段？填写这些片段的 iden、offset、MF:
      片段1：（    ）（    ）（    ）,
      片段2：（    ）（    ）（    ）,
      片段3：（    ）（    ）（    ）,
      片段4：（    ）（    ）（    ）。
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 12.  如果上题的第二个片段在后面的一个路由器上要转发到MTU=300的物理网络上，要继续划分片段，填写这些片段的 iden、offset、MF:
      片段1：（    ）（    ）（    ）,
      片段2：（    ）（    ）（    ）,
      片段3：（    ）（    ）（    ）。
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 13.  IP的记录路由选项中如果指针为16，表示记录了多少个IP地址？
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 14.  下面哪些关于两个IP地址的说法是正确的?
 
      A.如果它们在不同的网络，则它们的网络号必须不同.
@@ -149,6 +210,11 @@
 
      E.如果它们在相同的网络，则它们的主机号必须不同.
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 15.  下面的IP地址中A类、B类、C类地址分别有几个? （    ）（    ）（    ）
 
      *   92.168.1.100
@@ -161,6 +227,11 @@
      *   192.1.100.1
      *   202.15.200.12
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 16.  关于IP分组和IP地址的填空:
 
      A.把IP多播地址224.0.1.5转换为MAC多播地址是什么？
@@ -175,12 +246,27 @@
 
      F.一个C类网可用的IP地址有多少个？
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 17.  一个C类网192.1.2.0划分为6个子网，它们分别需要配置2、2、2、2、50、50个接口的IP地址。如果要求消耗最少的IP地址,请采用点分十进制(dotted decimal)格式(a.b.c.d)写出它们的子网号和子网掩码（地址从小到大）： 
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 18.  如果用8个C类网193.10.24.0~193.10.31.0形成一个超网(supernet),该超网的子网号和子网掩码是什么？
 
      *   子网号和子网掩码都用点分四进制表示a.b.c.d
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 19.  下面哪些地址为私有地址? 
 
      A.10.200.10.1
@@ -199,6 +285,11 @@
 
      H.192.168.255.254
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 20.  采用NAT技术，如果从外网发回的IP分组中应该转换的IP地址和端口号是哪个？
 
      A.源IP地址和源端口号
@@ -209,6 +300,11 @@
 
      D.目的IP地址和源端口号
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 21.  ARP请求包的字段哪些是已知的?
 
      A.source IP address
@@ -223,6 +319,11 @@
 
      F.dest port number
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 22.  关于ARP协议,下面哪些说法是正确的?
 
      A.一台主机可以通过ARP协议通过远端IP地址(非直连网)取得其对应的MAC地址。
@@ -237,6 +338,11 @@
 
      F.缓存的IP地址和MAC地址的映射具有生存期。
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 23.  在一个以太网中，哪个DHCP数据包可以让该网络中的每个DHCP服务器知道DHCP客户端是否选用了它提供的IP地址?
 
      A.DHCP discover
@@ -247,6 +353,11 @@
 
      D.DHCP ack
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 24.  转发IP分组时，在下面哪些情况下，路由器会发送ICMP数据报通知源主机?
 
      A.IP数据报的TTL在路由器上减到0.
@@ -261,8 +372,18 @@
 
      F.IP分组头部有选项.
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 25.  填写上题中发送的ICMP数据报的类型和代码。
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 26.  填空：
 
      （1）RIP协议属于
@@ -281,6 +402,11 @@
 
      可选项：路由，动态路由，静态路由，IGP协议，EGP协议
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 27.  下面关于查询路由表和转发IP分组的说法哪些是正确的?
 
      A.路由表中每一行的下一跳和接口处于同一物理网络中。
@@ -297,6 +423,11 @@
 
      G.路由器会把目的地址为广播地址的IP分组从所有接口广播出去。
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 28.  当路由器为一个IP分组查询路由表，对于以下几种情况，路由器会怎么做？从可选项中选择最合适的（填字母）
 
      (1)没有任何匹配项 
@@ -323,18 +454,33 @@
 
      F.丢弃该分组
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 29.  下图为路由器R60的路由表：
 
      ![img](assets/fig4-2.jpg)
 
      如果R60依次收到目的地址为10.1.1.20、166.132.5.5、202.118.201.227、195.42.22.1的IP分组，R60转发它们的下一跳分别是什么？ 
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 30.  下图为路由器R1的路由表：
 
      ![img](assets/fig4-3.jpg)
 
      如果R1依次收到目的地址为192.4.153.17、128.96.39.10、128.96.40.12、128.96.40.151和192.4.153.90的IP分组，R1转发它们的下一跳分别是什么？ 
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 31.  主机和路由器通过三个以太网连接：[H1]-N1-[R1]-N2-[R2]-N3-[H2]。主机和路由器的每个接口的IP地址都配置正确。如果除了一种配置其他配置都是正确的，问其中哪种配置错误或者没有配置会导致一下问题？(填字母) 
 
      (1)H1可以ping通R1左边接口的IP地址但是ping不通R1右边接口的IP地址?
@@ -355,12 +501,22 @@
 
      D.H2配置默认路由指向R2
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 32.  对于上题的三种情况，ping会分别返回什么错误？(填字母)
 
      A. timeout
 
      B. destination host unreachable
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 33.  下面的路由表为一台主机的路由表，该主机有一个有线网卡(BroadCom)和一个无线网卡(Intel)，接口编号分别为0x10003和0x10004。无线接口为活动接口，其IP地址、子网掩码和默认网关分别为192.168.2.101、255.255.255.0、192.168.2.1。
 
      ![img](assets/fig4-6.jpg)
@@ -385,17 +541,57 @@
      *   发给默认网关
      *   发给环回网络（自己）
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 34.  用什么办法可以确定一个IP地址在一个以太网中没有(正在)被用?
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 35.  ping可以在子网中产生一个广播帧，请给出并解释方法。
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 36.  一台路由器连接两个子网（以太网）: N1-[R1]-N2。如果一台主机从一个子网移到另一个子网，并修改为另一个子网的IP地址，如何增加路由器的功能使这台主机还可以接收到用原IP地址发给它的数据报？
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 37.  用一个交换机连接主机H1和H2。H1如何可以窃听到本网络中任何发给H2的帧?
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 38.  如果一个路由器连接了两个以太网，如何采用DHCP协议让这两个以太网可以共用一个DHCP服务器？
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 39.  当一台主机要向远方的另一台主机发送很多数据报。如果它希望这些数据报中途不要分段以节约路由器的时间，这就要找到路径上最小的MTU，有何方法？假设这段时间该路径不会改变。
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
 40.  一台主机往远方的另一台主机发送数据报。如何可以通过数据报的TTL字段和ICMP协议依次（由近至远）得到整条路径上的路由器的IP地址（每个路由器只需要得到一个IP地址）? 假设这段时间该路径不会改变。
 
+    <details><summary>Answer</summary>
+        ans
+    </details>
+
+    
