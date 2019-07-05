@@ -159,21 +159,21 @@
 
 10.  如果不带选项的IP数据报被分段, 这些片段头部的哪些字段可能与原数据报头部字段的内容不一样?
 
-     A.header checksum
+    A.header checksum
 
-     B.MF
+    B.MF
 
-     C.offset
+    C.offset
 
-     D.TTL
+    D.TTL
 
-     E.total length
+    E.total length
 
-     F.Identification
+    F.Identification
 
-     G.destination address
+    G.destination address
 
-     H.protocol
+    H.protocol
 
     <details><summary>Answer</summary>
         ABCE
