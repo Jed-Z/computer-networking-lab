@@ -7,7 +7,7 @@
 
 
 
-本仓库包括以下内容：
+本仓库包含：
 
 1.  计算机网络实验课程的全部内容，包括个人独立完成的**编程实验**和 4 人小组完成的**配置实验**。仓库中的代码和文档仅为我和我的小组完成的，无法保证正确性，仅供参考；
 2.  小溪网上的理论练习题及参考答案，部分题目有解析。
@@ -35,21 +35,21 @@
 | 3    | [静态路由实验](Configuring_配置实验/Conf3_静态路由实验)      | 掌握静态路由的配置和使用方法                                 |
 | 4    | [VLAN 间路由实验](Configuring_配置实验/Conf4_VLAN间路由实验) | 掌握 VLAN 间静态路由的配置和使用方法，熟悉三层交换机的配置方法 |
 | 5    | [RIP 配置实验](Configuring_配置实验/Conf5_RIP配置实验)       | 学习 RIPv2 的配置方法                                        |
-| 6    | [OSPF 配置实验](Configuring_配置实验/Conf6_OSPF配置实验)     | 掌握OSPF协议单区域配置方法                                   |
-| 7    | [综合组网实验](Configuring_配置实验/Conf7_综合组网实验)      | 学习通过三层交换技术和OSPF协议把实验网连入校园网             |
+| 6    | [OSPF 配置实验](Configuring_配置实验/Conf6_OSPF配置实验)     | 掌握 OSPF 协议单区域配置方法                                 |
+| 7    | [综合组网实验](Configuring_配置实验/Conf7_综合组网实验)      | 学习通过三层交换技术和 OSPF 协议把实验网连入校园网           |
 
 
 
 ## 理论练习题
 
-另附计算机网络[理论练习题及其参考答案](计网理论练习题)（小溪网）。快速导航：
+另附计算机网络[理论练习题及其参考答案](计网理论练习题)（小溪网）。同时提供题目完全相同的两个版本：MD 版（整理为 Markdown 格式）和网页版（直接保存的网页）两种版本，题目及答案内容完全相同。
 
 | 序号             | 内容描述                       | MD 版                  | 网页版                    | 题量 |
 | ---------------- | ------------------------------ | ---- | ---- | ---- |
 | 1 | 计网基本概念、时延、物理层     | [ex1](计网理论练习题/ex1.md) | [作业1](https://jed-z.github.io/computer-networking-lab/计网理论练习题/网页版/作业1.html) | 49   |
 | 2 | 数据链路层                     | [ex2](计网理论练习题/ex2.md) | [作业2](https://jed-z.github.io/computer-networking-lab/计网理论练习题/网页版/作业2.html) | 24   |
 | 3 | 以太网、透明网桥、生成树、VLAN | [ex3](计网理论练习题/ex3.md) | [作业3](https://jed-z.github.io/computer-networking-lab/计网理论练习题/网页版/作业3.html) | 26   |
-| 4 | IP协议和IP地址 | [ex4](计网理论练习题/ex4.md) | [作业4](https://jed-z.github.io/computer-networking-lab/计网理论练习题/网页版/作业4.html) | 40 |
+| 4 | IP 协议和 IP 地址 | [ex4](计网理论练习题/ex4.md) | [作业4](https://jed-z.github.io/computer-networking-lab/计网理论练习题/网页版/作业4.html) | 40 |
 | 5 | 路由协议：RIP、OSPF | [ex5](计网理论练习题/ex5.md) | [作业5](https://jed-z.github.io/computer-networking-lab/计网理论练习题/网页版/作业5.html) | 19 |
 | 6 | 传输层 | [ex6](计网理论练习题/ex6.md) | [作业6](https://jed-z.github.io/computer-networking-lab/计网理论练习题/网页版/作业6.html) | 39 |
 
