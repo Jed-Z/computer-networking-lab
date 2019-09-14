@@ -42,14 +42,14 @@
 
 ## 理论练习题
 
-另附计算机网络[理论练习题及其参考答案](计网理论练习题)（小溪网）。同时提供内容完全相同的两个版本：MD 版（整理为 Markdown 格式）和网页版（直接保存的网页）两种版本。
+另附计算机网络[理论练习题及其参考答案](计网理论练习题)（小溪网）。
 
-| 序号             | 内容描述                       | MD 版                  | 网页版                    | 题量 |
-| ---------------- | ------------------------------ | ---- | ---- | ---- |
-| 1 | 计网基本概念、时延、物理层     | [ex1](计网理论练习题/MD版/ex1.md) | [作业1](https://jed-z.github.io/computer-networking-lab/计网理论练习题/网页版/作业1.html) | 49   |
-| 2 | 数据链路层                     | [ex2](计网理论练习题/MD版/ex2.md) | [作业2](https://jed-z.github.io/computer-networking-lab/计网理论练习题/网页版/作业2.html) | 24   |
-| 3 | 以太网、透明网桥、生成树、VLAN | [ex3](计网理论练习题/MD版/ex3.md) | [作业3](https://jed-z.github.io/computer-networking-lab/计网理论练习题/网页版/作业3.html) | 26   |
-| 4 | IP 协议和 IP 地址 | [ex4](计网理论练习题/MD版/ex4.md) | [作业4](https://jed-z.github.io/computer-networking-lab/计网理论练习题/网页版/作业4.html) | 40 |
-| 5 | 路由协议：RIP、OSPF | [ex5](计网理论练习题/MD版/ex5.md) | [作业5](https://jed-z.github.io/computer-networking-lab/计网理论练习题/网页版/作业5.html) | 19 |
-| 6 | 传输层 | [ex6](计网理论练习题/MD版/ex6.md) | [作业6](https://jed-z.github.io/computer-networking-lab/计网理论练习题/网页版/作业6.html) | 39 |
+| 序号             | 内容描述                       | 网页版                    | 题量 |
+| ---------------- | ------------------------------ | ---- | ---- |
+| 1 | 计网基本概念、时延、物理层     | [作业1](https://jed-z.github.io/computer-networking-lab/计网理论练习题/作业1.html) | 49   |
+| 2 | 数据链路层                     | [作业2](https://jed-z.github.io/computer-networking-lab/计网理论练习题/作业2.html) | 24   |
+| 3 | 以太网、透明网桥、生成树、VLAN | [作业3](https://jed-z.github.io/computer-networking-lab/计网理论练习题/作业3.html) | 26   |
+| 4 | IP 协议和 IP 地址 | [作业4](https://jed-z.github.io/computer-networking-lab/计网理论练习题/作业4.html) | 40 |
+| 5 | 路由协议：RIP、OSPF | [作业5](https://jed-z.github.io/computer-networking-lab/计网理论练习题/作业5.html) | 19 |
+| 6 | 传输层 | [作业6](https://jed-z.github.io/computer-networking-lab/计网理论练习题/作业6.html) | 39 |
 
