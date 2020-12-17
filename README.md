@@ -1,7 +1,6 @@
 # 计算机网络实验
 
-*   中山大学（SYSU）
-*   数据科学与计算机学院（SDCS）
+*   中山大学计算机学院
 *   计算机网络实验（Computer Networks Laboratory, DCS222）；教师：张永民
 *   2019 春季学期（Spring 2019）
 
