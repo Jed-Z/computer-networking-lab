@@ -45,10 +45,10 @@
 
 | 序号             | 内容描述                       | 网页版                    | 题量 |
 | ---------------- | ------------------------------ | ---- | ---- |
-| 1 | 计网基本概念、时延、物理层     | [作业1](https://xjed.github.io/computer-networking-lab/计网理论练习题/作业1.html) | 49   |
-| 2 | 数据链路层                     | [作业2](https://xjed.github.io/computer-networking-lab/计网理论练习题/作业2.html) | 24   |
-| 3 | 以太网、透明网桥、生成树、VLAN | [作业3](https://xjed.github.io/computer-networking-lab/计网理论练习题/作业3.html) | 26   |
-| 4 | IP 协议和 IP 地址 | [作业4](https://xjed.github.io/computer-networking-lab/计网理论练习题/作业4.html) | 40 |
-| 5 | 路由协议：RIP、OSPF | [作业5](https://xjed.github.io/computer-networking-lab/计网理论练习题/作业5.html) | 19 |
-| 6 | 传输层 | [作业6](https://xjed.github.io/computer-networking-lab/计网理论练习题/作业6.html) | 39 |
+| 1 | 计网基本概念、时延、物理层     | [作业1](https://jed-z.github.io/computer-networking-lab/计网理论练习题/作业1.html) | 49   |
+| 2 | 数据链路层                     | [作业2](https://jed-z.github.io/computer-networking-lab/计网理论练习题/作业2.html) | 24   |
+| 3 | 以太网、透明网桥、生成树、VLAN | [作业3](https://jed-z.github.io/computer-networking-lab/计网理论练习题/作业3.html) | 26   |
+| 4 | IP 协议和 IP 地址 | [作业4](https://jed-z.github.io/computer-networking-lab/计网理论练习题/作业4.html) | 40 |
+| 5 | 路由协议：RIP、OSPF | [作业5](https://jed-z.github.io/computer-networking-lab/计网理论练习题/作业5.html) | 19 |
+| 6 | 传输层 | [作业6](https://jed-z.github.io/computer-networking-lab/计网理论练习题/作业6.html) | 39 |
 
